@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="14dp"
+        android:background="@drawable/background_round">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvVideoView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <VideoView
+                    android:id="@+id/plVideo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true" />
+
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivLike"
+            android:layout_width="24dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/like_outlined"
+            app:layout_constraintStart_toStartOf="@id/cvVideoView"
+            app:layout_constraintTop_toBottomOf="@id/cvVideoView" />
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/ivLike"
+            app:layout_constraintStart_toEndOf="@id/ivLike"
+            app:layout_constraintTop_toTopOf="@id/ivLike" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivComment"
+            android:layout_width="24dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/iv_comment"
+            app:layout_constraintEnd_toEndOf="@id/cvVideoView"
+            app:layout_constraintTop_toBottomOf="@id/cvVideoView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

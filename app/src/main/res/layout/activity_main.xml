@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clParent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#EEEEEE"
+        tools:context=".ui.activity.MainActivity">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:outlineSpotShadowColor="@color/colorPrimary"
+            app:cardElevation="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/stream"
+                    android:textColor="@color/black"
+                    android:textSize="21sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tvMovieName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/cera_pro_bold"
+            android:layout_margin="16dp"
+            android:text="@string/tears_of_steel"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cvToolbar" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            app:dividerColor="#494949"
+            android:layout_marginEnd="18dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvMovieName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvMovieName"
+            app:layout_constraintTop_toTopOf="@+id/tvMovieName" />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:cardCornerRadius="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvMovieName">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.media3.ui.PlayerView
+                    android:id="@+id/exoPlayerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="50dp"
+                    android:keepScreenOn="true"
+                    android:maxHeight="180dp"
+                    app:controller_layout_id="@layout/empty_exo_player"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cvMute"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="14dp"
+                    android:layout_margin="8dp"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/exoPlayerView"
+                    >
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="10dp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivMute"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_exo_unmute"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivLike"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_like"
+                    android:adjustViewBounds="true"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/exoPlayerView"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvLike"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-4dp"
+                    android:layout_marginBottom="6dp"
+                    tools:text="12"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/ivLike"
+                    app:layout_constraintStart_toStartOf="@+id/ivLike"
+                    app:layout_constraintTop_toBottomOf="@+id/ivLike"
+                    app:layout_constraintVertical_bias="0" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivComment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_comment"
+                    android:layout_marginStart="12dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivLike"
+                    app:layout_constraintStart_toEndOf="@+id/ivLike"
+                    app:layout_constraintTop_toTopOf="@+id/ivLike" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvComment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    tools:text="4"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvLike"
+                    app:layout_constraintEnd_toEndOf="@+id/ivComment"
+                    app:layout_constraintStart_toStartOf="@+id/ivComment"
+                    app:layout_constraintTop_toTopOf="@+id/tvLike"
+                    app:layout_constraintVertical_bias="0" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/icView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/ic_view"
+                    android:layout_marginStart="9dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivLike"
+                    app:layout_constraintStart_toEndOf="@+id/ivComment"
+                    app:layout_constraintTop_toTopOf="@+id/ivLike" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    tools:text="4"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvLike"
+                    app:layout_constraintEnd_toEndOf="@+id/icView"
+                    app:layout_constraintStart_toStartOf="@+id/icView"
+                    app:layout_constraintTop_toTopOf="@+id/tvLike"
+                    app:layout_constraintVertical_bias="0" />
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvFullVideo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="13dp"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardCornerRadius="25dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/exoPlayerView">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="5.2dp"
+                        android:paddingTop="5.2dp"
+                        android:paddingEnd="5.2dp"
+                        android:paddingBottom="5.2dp">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvViewprojections"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3.9dp"
+                            android:layout_marginEnd="7.8dp"
+                            android:text="@string/view_full_video"
+                            android:fontFamily="@font/cera_pro_bold"
+                            android:textColor="@color/white"
+                            android:textSize="11.7sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/ivViewProjections"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivViewProjections"
+                            android:layout_width="20.8dp"
+                            android:layout_height="20.8dp"
+                            android:src="@drawable/ic_vector_blue_arrow"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupVideo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:visibility="visible"
+            app:constraint_referenced_ids="tvMovieName,divider,cardView" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

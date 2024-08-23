@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@id/exo_controller_placeholder"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/player_controls_background"
+    android:padding="8dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/exo_back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_exo_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvMovieName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/cera_pro_bold"
+        android:text="Tears of Steel"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/exo_back_button"
+        app:layout_constraintStart_toEndOf="@+id/exo_back_button"
+        app:layout_constraintTop_toTopOf="@+id/exo_back_button" />
+
+    <ImageButton
+        android:id="@id/exo_rew"
+        style="@style/ExoMediaButton"
+        android:layout_marginHorizontal="16dp"
+        android:src="@drawable/ic_exo_rewind"
+        app:layout_constraintBottom_toBottomOf="@id/playPauseButton"
+        app:layout_constraintEnd_toStartOf="@id/playPauseButton"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/playPauseButton" />
+
+    <com.example.stream.widget.PlayPauseControlButton
+        android:id="@+id/playPauseButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/exo_ffwd"
+        app:layout_constraintStart_toEndOf="@id/exo_rew"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/replayButton"
+        style="@style/ExoMediaButton"
+        android:src="@drawable/ic_exo_replay"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@id/exo_ffwd"
+        style="@style/ExoMediaButton"
+        android:layout_marginHorizontal="16dp"
+        android:src="@drawable/ic_exo_forward"
+        app:layout_constraintBottom_toBottomOf="@id/playPauseButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/playPauseButton"
+        app:layout_constraintTop_toTopOf="@id/playPauseButton" />
+
+    <com.example.stream.widget.MuteButton
+        android:id="@+id/muteButton"
+        style="@style/ExoMediaButton"
+        android:visibility="gone"
+        android:layout_marginHorizontal="8dp"
+        app:layout_constraintBottom_toTopOf="@id/exo_progress"
+        app:layout_constraintEnd_toStartOf="@id/subtitleButton"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/subtitleButton"
+        style="@style/ExoMediaButton"
+        android:layout_marginHorizontal="8dp"
+        android:src="@drawable/ic_exo_subtitle"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/exo_progress"
+        app:layout_constraintEnd_toStartOf="@id/qualityButton"
+        app:layout_constraintStart_toEndOf="@id/muteButton"
+        app:tint="@color/disabled_button_color" />
+
+    <ImageButton
+        android:id="@+id/qualityButton"
+        style="@style/ExoMediaButton"
+        android:layout_marginHorizontal="8dp"
+        android:src="@drawable/ic_exo_quality"
+        app:layout_constraintBottom_toTopOf="@id/exo_progress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/subtitleButton"
+        app:tint="@color/disabled_button_color" />
+
+    <TextView
+        android:id="@id/exo_position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:includeFontPadding="false"
+        android:paddingHorizontal="4dp"
+        android:textColor="#FFBEBEBE"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/exo_progress"
+        app:layout_constraintEnd_toStartOf="@id/exo_progress"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/exo_progress" />
+
+    <androidx.media3.ui.DefaultTimeBar
+        android:id="@id/exo_progress"
+        android:layout_width="0dp"
+        android:layout_height="26dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/exoEndPosition"
+        app:layout_constraintStart_toEndOf="@id/exo_position"
+        app:played_color="@color/primary_color"
+        app:scrubber_color="@color/primary_color" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivDot1"
+        android:layout_width="6dp"
+        android:layout_height="6dp"
+        android:elevation="2dp"
+        android:src="@drawable/ic_vector_dot"
+        app:layout_constraintBottom_toBottomOf="@id/exo_progress"
+        app:layout_constraintEnd_toStartOf="@+id/exoEndPosition"
+        app:layout_constraintStart_toEndOf="@id/exo_progress"
+        app:layout_constraintTop_toTopOf="@id/exo_progress"/>
+
+    <TextView
+        android:id="@id/exoEndPosition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="6dp"
+        android:includeFontPadding="false"
+        android:paddingHorizontal="4dp"
+        android:textColor="#FFBEBEBE"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/exo_progress"
+        app:layout_constraintEnd_toStartOf="@+id/ivOrientation"
+        app:layout_constraintStart_toEndOf="@id/ivDot1"
+        app:layout_constraintTop_toTopOf="@id/exo_progress" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivOrientation"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:src="@drawable/ic_vector_orientation"
+        app:layout_constraintBottom_toBottomOf="@+id/exoEndPosition"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/exoEndPosition" />
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            >
+
+            <com.example.stream.widget.VerticalSeekBar
+                android:id="@+id/volumeSeekBar"
+                android:layout_width="10dp"
+                android:layout_height="180dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

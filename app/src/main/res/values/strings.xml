@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Stream +</string>
+    <string name="player_automatic">Automatic</string>
+    <string name="player_subtitle_off">No Subtitle</string>
+    <string name="add_video_url">Video url</string>
+    <string name="add_vtt_format_subtitle_url">VTT format subtitle url (optional)</string>
+    <string name="play">Play</string>
+    <string name="play_default_media">Play default media</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="stream">Stream +</string>
+    <string name="tears_of_steel">Tears of Steel</string>
+    <string name="view_full_video">View Full Video</string>
+    <string name="hang_tight_we_re_getting_things_ready_for_you">Hang tight, we\'re getting things ready for you!</string>
+    <string name="comment">Comment</string>
+    <string name="enter_username_to_comment">Enter Username to Comment</string>
+    <string name="username">UserName</string>
+    <string name="enter_your_username">Enter your username</string>
+    <string name="next">Next</string>
+
+</resources>

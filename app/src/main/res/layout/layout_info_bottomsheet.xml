@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="6dp"
+        app:cardElevation="6dp"
+        app:layout_behavior="@string/bottom_sheet_behavior">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_corner_white">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivClose"
+                    android:layout_width="23.4dp"
+                    android:layout_height="23.4dp"
+                    android:layout_marginTop="7.8dp"
+                    android:layout_marginEnd="7.8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@drawable/ic_filled_cancel"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16.9dp"
+                    android:fontFamily="@font/cera_pro_medium"
+                    android:gravity="center_vertical"
+                    android:lineSpacingExtra="2.9sp"
+                    android:padding="5.2dp"
+                    android:text="UserName"
+                    android:textColor="@color/material_black"
+                    android:textSize="18.2sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/tvDescription"
+                    app:layout_constraintEnd_toStartOf="@+id/ivClose"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDescription"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7.8dp"
+                    android:layout_marginBottom="26dp"
+                    android:layout_marginEnd="7.8dp"
+                    android:drawablePadding="13dp"
+                    android:fontFamily="@font/cera_pro_light"
+                    android:gravity="center_vertical"
+                    android:lineSpacingExtra="1.2sp"
+                    android:padding="5.2dp"
+                    android:text="@string/comment"
+                    android:textColor="@color/material_black"
+                    android:textSize="15.6sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tvTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </FrameLayout>
+</layout>
